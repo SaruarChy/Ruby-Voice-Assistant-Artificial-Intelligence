@@ -13,6 +13,24 @@ def speak(audio):
     engine.runAndWait()
 
 
+#wish me function
+def wish_me():
+    hour = int(datetime.datetime.now().hour)
+    if hour >= 0 and hour <12:
+        speak("Good morning sir.")
+    
+    elif hour >=12 and hour < 16:
+        speak("Good noon sir.")
+    
+    elif hour >=16 and hour < 18:
+        speak("Good afternoon sir.")
+
+    else:
+        speak("Good evening sir.")
+    
+    speak("I'm Ruby. How may I help you?")
+            
+
 #main function
 if __name__ == "__main__":
-    speak("I'm Ruby. How may i help you?")
+    wish_me()
