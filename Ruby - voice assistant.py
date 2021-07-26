@@ -1,8 +1,8 @@
-import pyttsx3
-import speech_recognition as sr
+import pyttsx3 #pip install pyttsx3
+import speech_recognition as sr #pip install speechRecognition
 import datetime
-import wikipedia
-
+import wikipedia #pip install wikipedia
+import webbrowser
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -56,7 +56,9 @@ if __name__ == "__main__":
     wish_me()
     while True:
         query = takeCommand().lower()
-        # Logic for executing tasks base on query
+        # Logic for executing tasks based on query
+
+        #for the results from wikipedia
         if 'wikipedia' in query:
             speak('Searching wikipedia...')
             query = query.replace("wikipedia", "")
@@ -64,3 +66,22 @@ if __name__ == "__main__":
             speak("According to Wikipedia")
             print(results)
             speak(results)
+        
+        #for opening some popular websites
+        elif 'open google' in query:
+            webbrowser.open("google.com")
+        elif 'open stackoverflow' in query:
+            webbrowser.open("stackoverflow.com")
+        elif 'open github' in query:
+            webbrowser.open("github.com")
+        elif 'open youtube' in query:
+            webbrowser.open("youtube.com")
+        elif 'open facebook' in query:
+            webbrowser.open("facebook.com")
+        elif 'open instagram' in query:
+            webbrowser.open("instagram.com")
+        elif 'open codeforces' in query:
+            webbrowser.open("codeforces.com")
+        elif 'open codechef' in query:
+            webbrowser.open("codechef.com")
+        
