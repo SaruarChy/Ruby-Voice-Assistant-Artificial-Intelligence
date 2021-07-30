@@ -3,6 +3,7 @@ import speech_recognition as sr #pip install speechRecognition
 import datetime
 import wikipedia #pip install wikipedia
 import webbrowser
+import os
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -85,3 +86,9 @@ if __name__ == "__main__":
         elif 'open codechef' in query:
             webbrowser.open("codechef.com")
         
+        #for playing musics
+        elif 'play music' in query:
+            music_dir = 'C:\\Users\\Saruar\\Music'
+            songs = os.listdir(music_dir)
+            print(songs)
+            os.startfile(os.path.join(music_dir, songs[0]))
