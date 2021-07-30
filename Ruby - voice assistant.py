@@ -87,7 +87,8 @@ if __name__ == "__main__":
             webbrowser.open("codechef.com")
         
         #for playing musics
-        elif 'play music' in query:
+        elif 'play music' in query or "play song" in query:
+            speak("Here you go with music")
             music_dir = 'C:\\Users\\Saruar\\Music'
             songs = os.listdir(music_dir)
             print(songs)
