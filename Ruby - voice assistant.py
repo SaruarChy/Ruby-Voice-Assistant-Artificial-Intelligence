@@ -99,3 +99,13 @@ if __name__ == "__main__":
             timeNow = datetime.datetime.now().strftime("%H:%M:%S")
             print(timeNow)
             speak(f"Sir, the time is{timeNow}") 
+
+        #for opening some software by command
+        elif 'open chrome' in query:
+            chromePath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+            speak("Google chrome is opening sir")
+            os.startfile(chromePath)
+        elif 'open code' in query:
+            codePath = "C:\\Users\\Saruar\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            speak("VS Code is opening sir")
+            os.startfile(codePath)
