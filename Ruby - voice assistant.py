@@ -96,6 +96,6 @@ if __name__ == "__main__":
 
         #for telling the time
         elif 'time now' in query or "the time" in query:
-            timeNow = datetime.datetime.now().strftime("% H:% M:% S"")
+            timeNow = datetime.datetime.now().strftime("%H:%M:%S")
             print(timeNow)
             speak(f"Sir, the time is{timeNow}") 
