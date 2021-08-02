@@ -93,3 +93,9 @@ if __name__ == "__main__":
             songs = os.listdir(music_dir)
             print(songs)
             os.startfile(os.path.join(music_dir, songs[0]))
+
+        #for telling the time
+        elif 'time now' in query or "the time" in query:
+            timeNow = datetime.datetime.now().strftime("% H:% M:% S"")
+            print(timeNow)
+            speak(f"Sir, the time is{timeNow}") 
