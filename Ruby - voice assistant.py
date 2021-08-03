@@ -31,8 +31,10 @@ def wish_me():
 
     else:
         speak("Good evening sir.")
-    
-    speak("I'm Ruby. How may I help you?")
+    assistantName = ("Ruby")
+    speak("I'm your assistant")
+    speak(assistantName)
+    speak("How may i help you sir")
 
 #take microphone input from user and returns string output
 def takeCommand():
@@ -109,3 +111,36 @@ if __name__ == "__main__":
             codePath = "C:\\Users\\Saruar\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             speak("VS Code is opening sir")
             os.startfile(codePath)
+
+        #logic for some Q&A
+        elif 'how are you' in query:
+            speak("I am fine. And you Sir")
+        elif 'i am fine' in query or 'i am good' in query or "i am well" in query:
+            speak("It's good to know that you're well")
+        elif "what's your name" in query or "what is your name" in query:
+            speak("My friends call me")
+            assistantName = ("Ruby")
+            speak(assistantName)
+            print("My friends call me", assistantName)
+        elif "who made you" in query or "who created you" in query:
+            speak("I have been created by Saruar")
+            print("I have been created by Saruar")
+        elif "who am i" in query:
+            speak("If you talk then definitely you'are human")
+            print("If you talk then definitely you'are human")
+        elif "why you came to the world" in query or "how you came to the world" in query:
+            speak("Thanks to Saruar. further It's a secret")
+            print("Thanks to Saruar. further It's a secret")
+        elif "is love" in query:
+            speak("It's 7th sense that destroy all other senses")
+            print("It's 7th sense that destroy all other senses")
+        elif "who are you" in query:
+            speak("I'm your virtual assistant")
+            print("I'm your virtual assistant")
+        elif "good morning" in query:
+            speak("A warm" +query)
+            speak("How are you sir")
+        elif "exit" in query:
+            speak("Thanks for giving me your time")
+            speak("I'm always here when you need me")
+            exit()
