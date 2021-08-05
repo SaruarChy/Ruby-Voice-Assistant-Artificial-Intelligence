@@ -126,8 +126,8 @@ if __name__ == "__main__":
             speak("I have been created by Saruar")
             print("I have been created by Saruar")
         elif "who am i" in query:
-            speak("If you talk then definitely you'are human")
-            print("If you talk then definitely you'are human")
+            speak("If you talk then definitely you're human")
+            print("If you talk then definitely you're human")
         elif "why you came to the world" in query or "how you came to the world" in query:
             speak("Thanks to Saruar. further It's a secret")
             print("Thanks to Saruar. further It's a secret")
@@ -144,3 +144,16 @@ if __name__ == "__main__":
             speak("Thanks for giving me your time")
             speak("I'm always here when you need me")
             exit()
+        #most asked question from google Assistant
+        elif "will you be my girlfriend" in query or "will you be my boyfriend" in query:
+            speak("I will. But you have to be like me")
+            print("I will. But you have to be like me")
+        elif "i love you" in query:
+            speak("don't confuse me")
+            print("don't confuse me")
+        elif "will you be my friend" in query:
+            speak("Of course")
+            print("Of course")
+        elif "sing a song" in query:
+            speak("I wish I were able to. but i can play some songs for you sir. May i?")
+            print("I wish I were able to. but i can play some songs for you sir. May i?")
