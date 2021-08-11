@@ -4,6 +4,7 @@ import datetime
 import wikipedia #pip install wikipedia
 import webbrowser
 import os
+import pyjokes
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -73,7 +74,7 @@ if __name__ == "__main__":
         #for opening some popular websites
         elif 'open google' in query:
             webbrowser.open("google.com")
-        elif 'open stackoverflow' in query:
+        elif 'open stack overflow' in query:
             webbrowser.open("stackoverflow.com")
         elif 'open github' in query:
             webbrowser.open("github.com")
@@ -157,3 +158,5 @@ if __name__ == "__main__":
         elif "sing a song" in query:
             speak("I wish I were able to. but i can play some songs for you sir. May i?")
             print("I wish I were able to. but i can play some songs for you sir. May i?")
+        elif 'joke' in query:
+            speak(pyjokes.get_joke())
