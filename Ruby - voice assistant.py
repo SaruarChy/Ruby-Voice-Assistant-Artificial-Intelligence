@@ -73,20 +73,28 @@ if __name__ == "__main__":
         
         #for opening some popular websites
         elif 'open google' in query:
+            speak("Google is opening sir.")
             webbrowser.open("google.com")
         elif 'open stack overflow' in query:
+            speak("Stackoverflow is opening sir.")
             webbrowser.open("stackoverflow.com")
         elif 'open github' in query:
+            speak("Github is opening sir.")
             webbrowser.open("github.com")
         elif 'open youtube' in query:
+            speak("Youtube is opening sir.")
             webbrowser.open("youtube.com")
         elif 'open facebook' in query:
+            speak("Facebook is opening sir.")
             webbrowser.open("facebook.com")
         elif 'open instagram' in query:
+            speak("Instagram is opening sir.")
             webbrowser.open("instagram.com")
         elif 'open codeforces' in query:
+            speak("Codeforces is opening sir.")
             webbrowser.open("codeforces.com")
         elif 'open codechef' in query:
+            speak("Codechef is opening sir.")
             webbrowser.open("codechef.com")
         
         #for playing musics
