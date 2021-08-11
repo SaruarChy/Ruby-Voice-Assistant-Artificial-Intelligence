@@ -33,8 +33,7 @@ def wish_me():
     else:
         speak("Good evening sir.")
     assistantName = ("Ruby")
-    speak("I'm your assistant")
-    speak(assistantName)
+    speak("I'm your assistant" +assistantName)
     speak("How may i help you sir")
 
 #take microphone input from user and returns string output
@@ -127,9 +126,8 @@ if __name__ == "__main__":
         elif 'i am fine' in query or 'i am good' in query or "i am well" in query:
             speak("It's good to know that you're well")
         elif "what's your name" in query or "what is your name" in query:
-            speak("My friends call me")
             assistantName = ("Ruby")
-            speak(assistantName)
+            speak("My friends call me"+ assistantName)
             print("My friends call me", assistantName)
         elif "who made you" in query or "who created you" in query:
             speak("I have been created by Saruar")
@@ -166,5 +164,14 @@ if __name__ == "__main__":
         elif "sing a song" in query:
             speak("I wish I were able to. but i can play some songs for you sir. May i?")
             print("I wish I were able to. but i can play some songs for you sir. May i?")
+        
+        # asking for a joke
         elif 'joke' in query:
             speak(pyjokes.get_joke())
+        
+        # asking for search something over internet
+        elif 'search' in query or 'play' in query:
+            query = query.replace("search", "")
+            query = query.replace("play", "")
+            speak("I'm searching" +query)
+            webbrowser.open(query)
