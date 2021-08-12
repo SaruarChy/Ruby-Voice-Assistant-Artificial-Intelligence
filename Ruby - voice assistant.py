@@ -4,7 +4,7 @@ import datetime
 import wikipedia #pip install wikipedia
 import webbrowser
 import os
-import pyjokes
+import pyjokes # pip install pyjokes
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -42,7 +42,7 @@ def takeCommand():
     with sr.Microphone() as source:
         print("Listening...")
         r.pause_threshold = 1
-        audio = r.listen(source)
+        audio = r.adjust_for_ambient_noise(source, duration=10)
 
     try:
         print("Recognizing...")
@@ -119,6 +119,10 @@ if __name__ == "__main__":
             codePath = "C:\\Users\\Saruar\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             speak("VS Code is opening sir")
             os.startfile(codePath)
+        elif 'open power point presentation' in query:
+            powerPoint = "C:\\Users\\Saruar\\OneDrive\\Documents\\presentation\\Ruby - Voice assistant.pptx"
+            speak("Power point presentation is opening sir.")
+            os.startfile(powerPoint)
 
         #logic for some Q&A
         elif 'how are you' in query:
@@ -169,7 +173,7 @@ if __name__ == "__main__":
         elif 'joke' in query:
             speak(pyjokes.get_joke())
         
-        # asking for search something over internet
+        # asking for search something over the internet
         elif 'search' in query or 'play' in query:
             query = query.replace("search", "")
             query = query.replace("play", "")
