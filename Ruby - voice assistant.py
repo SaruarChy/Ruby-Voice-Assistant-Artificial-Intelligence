@@ -169,6 +169,13 @@ if __name__ == "__main__":
         elif "sing a song" in query:
             speak("I wish I were able to. but i can play some songs for you sir. May i?")
             print("I wish I were able to. but i can play some songs for you sir. May i?")
+            query = takeCommand()
+            if "yes" in query or "sure" in query:
+                speak("Here you go with music")
+                music_dir = 'C:\\Users\\Saruar\\Music'
+                songs = os.listdir(music_dir)
+                print(songs)
+                os.startfile(os.path.join(music_dir, songs[0]))
         
         # asking for a joke
         elif 'joke' in query:
