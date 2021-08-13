@@ -201,4 +201,11 @@ if __name__ == "__main__":
             else:
                 textfile.write(note)
                 textfile.close()
+        
+        # show the saved note by voice command
+        elif "show note" in query:
+            speak("Showing notes")
+            textfile = open("Ruby's_note.txt", "r")
+            print(textfile)
+            speak(textfile.read())
                 
