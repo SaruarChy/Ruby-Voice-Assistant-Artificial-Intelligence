@@ -215,4 +215,11 @@ if __name__ == "__main__":
             textfile = open("Ruby's_note.txt", "r")
             print(textfile)
             speak(textfile.read())
-                
+
+        # asking ruby for any location
+        elif "where is" in query:
+            query = query.replace("where is", "")
+            location = query
+            speak("User asked to Locate")
+            speak(location)
+            webbrowser.open("https://www.google.com/maps/search/" + location + "")
