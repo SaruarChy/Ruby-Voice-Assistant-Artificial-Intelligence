@@ -5,6 +5,7 @@ import wikipedia #pip install wikipedia
 import webbrowser
 import os
 import pyjokes # pip install pyjokes
+from datetime import date
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -42,7 +43,7 @@ def takeCommand():
     with sr.Microphone() as source:
         print("Listening...")
         r.pause_threshold = 1
-        audio = r.adjust_for_ambient_noise(source, duration=10)
+        audio = r.listen(source)
 
     try:
         print("Recognizing...")
@@ -179,3 +180,25 @@ if __name__ == "__main__":
             query = query.replace("play", "")
             speak("I'm searching" +query)
             webbrowser.open(query)
+
+        # write a note by Ruby
+        elif "write a note" in query:
+            speak("What should i write, sir")
+            note = takeCommand()
+            textfile = open("Ruby's_note.txt", 'w')
+            speak("Sir, Should i include date and time")
+            date_time = takeCommand()
+            if 'yes' in date_time or 'sure' in date_time:
+                speak("done, sir")
+                date_today = date.today()
+                strDate = date_today.strftime("%d/%m/%Y ")
+                strTime = datetime.datetime.now().strftime("%H:%M:%S")
+                textfile.write(strDate)
+                textfile.write(strTime)
+                textfile.write(" : \n")
+                textfile.write(note)
+                textfile.close()
+            else:
+                textfile.write(note)
+                textfile.close()
+                
