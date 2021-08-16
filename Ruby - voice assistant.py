@@ -6,6 +6,7 @@ import webbrowser
 import os
 import pyjokes # pip install pyjokes
 from datetime import date
+import time
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -230,3 +231,14 @@ if __name__ == "__main__":
             translate = query
             speak("your translation is ready sir")
             webbrowser.open("https://translate.google.com/?sl=en&tl=bn&text="+translate+"&op=translate")
+
+        # I forbidding ruby to listen to me
+        elif "don't listen" in query or "stop listening" in query:
+            speak("How much time do you want to stop me from listening to commands, sir")
+            query = takeCommand() #only say the digit please
+            duration = int(query)
+            duration = duration * 60
+            speak("Okay, sir, I'll don't listen to you for"+query+"minute")
+            time.sleep(duration)
+            speak("Hello sir, Now I'm listening to your commands")
+            
