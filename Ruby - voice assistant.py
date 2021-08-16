@@ -220,6 +220,13 @@ if __name__ == "__main__":
         elif "where is" in query:
             query = query.replace("where is", "")
             location = query
-            speak("User asked to Locate")
-            speak(location)
+            speak("I locating"+location)
             webbrowser.open("https://www.google.com/maps/search/" + location + "")
+
+        # asking Ruby to translate english to bengali
+        elif "translate" in query:
+            speak("What should i translate sir")
+            query = takeCommand()
+            translate = query
+            speak("your translation is ready sir")
+            webbrowser.open("https://translate.google.com/?sl=en&tl=bn&text="+translate+"&op=translate")
