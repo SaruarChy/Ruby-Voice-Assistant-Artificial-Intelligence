@@ -241,4 +241,15 @@ if __name__ == "__main__":
             speak("Okay, sir, I'll don't listen to you for"+query+"minute")
             time.sleep(duration)
             speak("Hello sir, Now I'm listening to your commands")
+
+        # asking ruby for google direction from a place to another
+        elif "direction" in query:
+            speak("tell me the starting point, Sir. Where From I have to direct")
+            query = takeCommand()
+            source = query
+            speak("Now tell me the destination sir")
+            query = takeCommand()
+            destination = query
+            webbrowser.open("https://www.google.com/maps/dir/"+source+"/"+destination)
+            speak("Now, I'm showing you the direction sir")
             
